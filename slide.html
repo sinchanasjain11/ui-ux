@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image slider</title>
+</head>
+<body>
+    <h2> Image slider</h2>
+    <img id="image" src="a.jpg">
+    <br><br>
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+    <script>
+        let images=["img1.jpg","img2.jpg","img3.jpg"];
+        let i=0;
+        function next(){
+            i++;
+            if(i==images.length){
+                i=0;
+            }
+            document.getElementById("image").src=image[i];
+        }
+        function previous(){
+            i--;
+            if(i<0){
+                i=images.length-1;
+            }
+            document.getElementById("image").scr=images[i];
+        }
+        setInterval(next,3000);
+    </script>
+    
+</body>
+</html>
