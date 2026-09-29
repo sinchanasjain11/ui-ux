@@ -7,12 +7,12 @@
 
     <h2>To-Do List</h2>
 
-    <input type="text" id="task" placeholder="Enter task">
-    <button onclick="add()">Add</button>
+    <input type="text" id="tinput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
     
-    <ul id="list"></ul>
+    <ul id="tlist"></ul>
      <script>
-        function add() {
+        function addTask() {
             let task = document.getElementById("tinput").value;
 
             if(task == "") {
@@ -25,7 +25,7 @@
             taskText.textContent=task;
             let editButton=document.createElement("button");
             editButton.textContent="Edit";
-            editButton.onclick=funtion(){
+            editButton.onclick=function(){
                 editTask(taskText);
 
             };
@@ -33,17 +33,17 @@
             deleteButton.textContent="Delete";
             deleteButton.onclick=function(){
                 deleteTask(li);
-            }
+            };
             li.appendChild(taskText);
             li.appendChild(editButton);
             li.appendChild(deleteButton);
             document.getElementById("tlist").appendChild(li);
             document.getElementById("tinput").value="";
         }
-        function editTask(taskText)
-        {
+        
+        function editTask(taskText){
             let newTask=prompt("Edit task :",taskText.textContent);
-            if(newTask !=null && newTask !="")}{
+            if(newTask !=null && newTask !=""){
                 taskText.textContent=newTask;
             }
 
@@ -51,6 +51,7 @@
         function deleteTask(li){
             li.remove();
         }
+    
     </script>
 
 
